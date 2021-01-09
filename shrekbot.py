@@ -14,4 +14,4 @@ async def on_message(message):
             for item in i:
                 await message.channel.send(item)
                 time.sleep(0.8)
-client.run('Nzk2NzQwMTI4NzY0NTkyMTU4.X_cUEQ.Qw-jkcnmuNhb4fyIm8juxuvTIZw')
+client.run('token')
