@@ -12,4 +12,4 @@ async def on_message(message):
         for i in file.readlines():
             await message.channel.send(i)
             time.sleep(3)
-client.run('Nzk2Nzc5ODkyODAzODk1MzY2.X_c5GQ.IWAdhiOxud32IHumV2zTkYJ-kE4')
+client.run('token')
