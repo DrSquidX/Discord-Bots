@@ -4,6 +4,7 @@ client = discord.Client()
 response = False
 a = ""
 b = ""
+#i didnt want to write the cuss words so i just did this lol
 bad_word1_l1 = "u"
 bad_word1_l2 = "k"
 bad_word1_l3 = "c"
