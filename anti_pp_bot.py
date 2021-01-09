@@ -10,4 +10,4 @@ async def on_message(message):
         if message.author == client.user:
             await message.channel.send('My bad for saying the forbidden letters.')
         await message.delete()
-client.run('Nzk2Njg2MDk4NjU5MTQ3Nzk2.X_bhvw.1t3rD_4nod-UyAoliXo182VvPj8')
+client.run('token')
