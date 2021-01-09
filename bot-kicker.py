@@ -23,4 +23,4 @@ async def ban(ctx, member : discord.Member, *, reason=None):
     except:
         await ctx.send(f'You lack permissions!')
 
-client2.run('Nzk2Nzk3NjM2NTgxMzkyNDM0.X_dJoA.dbUMvHxIY0jxyTUcPJOeAFpV7bA')
+client2.run('token')
