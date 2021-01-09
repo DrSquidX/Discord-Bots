@@ -70,4 +70,4 @@ async def on_message(message):
         elif message.content.startswith('no'):
             await message.channel.send(f"Yeah, I guess not! You're {message.author.mention}")
             wait_for_ans = False
-client.run('Nzk2NzUxNDM0MjcyMDc5ODcy.X_cemA.7BXouDrrYZD7ddRYjEgjNmhMWbM')
+client.run('token')
