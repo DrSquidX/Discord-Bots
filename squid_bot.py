@@ -925,4 +925,4 @@ async def on_message(message):
         else:
             await message.channel.send(f'{message.author.mention}, you have entered the command incorrectly.\nUsage:```?highfive <entity>```')
 
-client.run('Nzk2Nzk3NjM2NTgxMzkyNDM0.X_dJoA.dbUMvHxIY0jxyTUcPJOeAFpV7bA')
+client.run('token')
