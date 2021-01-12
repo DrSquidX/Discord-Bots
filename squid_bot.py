@@ -4,7 +4,6 @@ client = discord.Client()
 response = False
 a = ""
 b = ""
-#i didnt want to write the cuss words so i just did this lol
 bad_word1_l1 = "u"
 bad_word1_l2 = "k"
 bad_word1_l3 = "c"
@@ -38,7 +37,31 @@ badword6_l3 = "c"
 badword6_l4 = "t"
 badword6_l5 = "h"
 badword6 = badword6_l2 + badword6_l1 + badword6_l4 + badword6_l3 + badword6_l5
-badwords = [badword1, badword2, badword3, badword4, badword5, badword6]
+badword7_l1 = "a"
+badword7_l2 = "f"
+badword7_l3 = "g"
+badword7_l4 = "o"
+badword7_l5 = "t"
+badword7_l6 = "g"
+badword7 = badword7_l2 + badword7_l1 + badword7_l3 + badword7_l6 + badword7_l4 + badword7_l5
+badwords = [badword1, badword2, badword3, badword4, badword5, badword6, badword7]
+nonoword1_l1 = "x"
+nonoword1_l2 = "s"
+nonoword1_l3 = "e"
+nonoword1 = nonoword1_l2 + nonoword1_l3 + nonoword1_l1
+nonoword2_l1 = "n"
+nonoword2_l2 = "t"
+nonoword2_l3 = "h"
+nonoword2_l4 = "e"
+nonoword2_l5 = "i"
+nonoword2_l6 = "a"
+nonoword2 = nonoword2_l3 + nonoword2_l4 + nonoword2_l1 + nonoword2_l2 + nonoword2_l6 + nonoword2_l5
+nonoword3_l1 = "o"
+nonoword3_l2 = "p"
+nonoword3_l3 = "n"
+nonoword3_l4 = "r"
+nonoword3 = nonoword3_l2 + nonoword3_l1 + nonoword3_l4 + nonoword3_l3
+nonowords = [nonoword1, nonoword2, nonoword3]
 response2 = False
 def binarytostr(binary):
     thing = binary.split()
@@ -621,6 +644,7 @@ bot = commands.Bot(command_prefix='!')
 async def on_ready():
     print(f"Logged in as {client.user}")
     print("Ready to begin doing tasks.")
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="?help"))
 
 @client.event
 async def on_message(message):
@@ -628,7 +652,7 @@ async def on_message(message):
         await message.channel.send(f'Welcome to Squid Bot {message.author.mention}. This bot has been coded by DrSquid™#7711. In this bot there are some random features that you can do. Please note that this bot is still in development. Do ?help if you want to get started on anything.')
         await message.author.send(f'Welcome to Squid Bot {message.author.mention}. This bot has been coded by DrSquid™#7711. In this bot there are some random features that you can do. Please note that this bot is still in development. Do ?help if you want to get started on anything.')
     elif message.content.startswith('?help'):
-        await message.channel.send(f'Here is a list of commands that you can use:\n```?help - This is displayed by this command\n?info - Gives info about bot.\n?devFavPkm - gives some of the devs favorite pokemon.\n?yoinkIP <domain_name> - Obtains the IP of a domain name(DO NOT USE THIS FOR NEFARIOUS PURPOSES)\n?trackIP <domain_name> - Tracks a given IP Address\n?special - Very special command. Try it out!\n?strtobinary <string> - Translates a string into binary\n?binarytostr <binary> - Translates binary into strings\n?strtobinary2 <binary> - Also translates binary into strings(slightly different)\n?diceRoll <first_num> <second_num> - Rolls a random number from the inputted range.\n?tts <string> - Sends a tts message\n?punch <entity> - Punches whatever is in the arguements\n?shrek - Spams the whole shrek movie script\n?beemovie - Spams the whole bee movie script\n?yeet <entity> - Yeets whatever is in the arguements\n?coinflip <heads/tails> - Flips an imaginary coin | This also does not require arguements.\n?devPCsetup - Check the devs PC setup\n?devFlex - Dev flexing his pokemon save file\n?wouldyourather - Asks a would you rather question\n?currenttime - Shows the current time in the devs time zone\n?slap <entity> - Slaps whatever is in the arguements\n?strtohash <string> - Encodes a string in an MD5 Hash\n?highfive <entity> - High fives whatever is in the arguments\n\na?kick <user> - Kicks a user from the server\na?ban <user> - Bans a user from the server```')
+        await message.channel.send(f'Here is a list of commands that you can use:\n```?help - This is displayed by this command\n?info - Gives info about bot.\n?devFavPkm - gives some of the devs favorite pokemon.\n?yoinkIP <domain_name> - Obtains the IP of a domain name(DO NOT USE THIS FOR NEFARIOUS PURPOSES)\n?trackIP <domain_name> - Tracks a given IP Address\n?special - Very special command. Try it out!\n?strtobinary <string> - Translates a string into binary\n?binarytostr <binary> - Translates binary into strings\n?strtobinary2 <binary> - Also translates binary into strings(slightly different)\n?diceRoll <first_num> <second_num> - Rolls a random number from the inputted range.\n?tts <string> - Sends a tts message\n?punch <entity> - Punches whatever is in the arguements\n?shrek - Spams the whole shrek movie script\n?beemovie - Spams the whole bee movie script\n?yeet <entity> - Yeets whatever is in the arguements\n?coinflip <heads/tails> - Flips an imaginary coin | This also does not require arguements.\n?devPCsetup - Check the devs PC setup\n?devFlex - Dev flexing his pokemon save file\n?wouldyourather - Asks a would you rather question\n?currenttime - Shows the current time in the devs time zone\n?slap <entity> - Slaps whatever is in the arguements\n?strtohash <string> - Encodes a string in an MD5 Hash\n?highfive <entity> - High fives whatever is in the arguments\n?github - Shows the github of the developer\n\na?kick <user> - Kicks a user from the server\na?ban <user> - Bans a user from the server```')
     elif message.content.startswith('?devFavPkm'):
         await message.channel.send('Some of the Developers favorite pokemon include: Mewtwo, Calyrex, Zacian, Sobble, Inteleon, Greninja, Charizard, Eternatus, Lucario, Rhydon, Lapras, Gengar, and Many more.')
     elif message.content.startswith('?yoinkIP'):
@@ -746,6 +770,10 @@ async def on_message(message):
                 await message.channel.send(f'Are you seriously gonna punch me, {message.author.mention}?')
             elif f'{message.author.id}' in result:
                 await message.channel.send(f'Dont punch yourself, {message.author.mention}!')
+            elif "<@704713686157361173>" in result:
+                await message.channel.send(f'Do not dare harm my creator, {message.author.mention}.')
+                await message.channel.send(f'{client.user.mention} has punched {message.author.mention}!')
+                await message.channel.send('https://i.imgur.com/ljXIKBF.gif?noredirect')
             else:
                 await message.channel.send(f'{message.author.mention} has punched {result}!')
                 await message.channel.send('https://i.imgur.com/ljXIKBF.gif?noredirect')
@@ -779,6 +807,10 @@ async def on_message(message):
                 await message.channel.send(f'Are you seriously gonna yeet me, {message.author.mention}?')
             elif f'{message.author.id}' in result:
                 await message.channel.send(f'Dont yeet yourself, {message.author.mention}!')
+            elif "<@704713686157361173>" in result:
+                await message.channel.send(f'Do not dare harm my creator, {message.author.mention}.')
+                await message.channel.send(f'{client.user.mention} has yeeted {message.author.mention}!')
+                await message.channel.send('https://68.media.tumblr.com/3de7aaa7732a84ab7bd4d6b1cf789451/tumblr_oebuutb05G1rc0cy9o1_500.gif')
             else:
                 await message.channel.send(f'{message.author.mention} has yeeted {result}!')
                 await message.channel.send(gifs[random.randint(0, (len(gifs) - 1))])
@@ -814,8 +846,8 @@ async def on_message(message):
     elif message.content.startswith('?wouldyourather'):
         global response
         response = False
-        aList = ['live on Mars', 'Live UnderWater', 'Be Mewtwo', 'Have Smallpp', 'choose B','choose A', 'play Minecraft', 'play Pokemon']
-        bList = ['live on Moon', 'Be Mew', 'Have bigPP', 'choose A', 'Choose B']
+        aList = ['live on Mars', 'Live UnderWater', 'Be Mewtwo', 'Have Smallpp','play Minecraft', 'play Pokemon']
+        bList = ['live on Moon', 'Be Mew', 'Have bigPP', 'Live on Pluto', 'None']
         global a
         global b
         a = aList[random.randint(0, (len(aList) - 1))]
@@ -885,6 +917,11 @@ async def on_message(message):
             if msg[0] != client.user.id:
                 if f'{message.author.id}' in msg[0]:
                     await message.channel.send(f'Dont slap yourself, {message.author.mention}!')
+                if "<@704713686157361173>" in msg[0]:
+                    await message.channel.send(f'Do not dare harm my creator, {message.author.mention}.')
+                    await message.channel.send(f'{client.user.mention} has slapped {message.author.mention}!')
+                    await message.channel.send(
+                        'https://media1.tenor.com/images/00c5fccb342d79bb56cf93c768534b5a/tenor.gif?itemid=4723816')
                 else:
                     await message.channel.send(f'{message.author.mention} has slapped {msg[0]}!')
                     await message.channel.send('https://media1.tenor.com/images/00c5fccb342d79bb56cf93c768534b5a/tenor.gif?itemid=4723816')
@@ -905,8 +942,14 @@ async def on_message(message):
         enc_result = result.encode('utf-8')
         digest = hashlib.md5(enc_result.strip()).hexdigest()
         await message.channel.send(f'The Hashed version of {result} is: {digest}')
-    if badwords[0] in message.content.lower() or badwords[1] in message.content.lower() or badwords[2] in message.content.lower() or badwords[3] in message.content.lower() or badwords[4] in message.content.lower() or badwords[5] in message.content.lower():
-        await message.channel.send(f'Watch your language, {message.author.mention}!')
+    elif badwords[0] in message.content.lower() or badwords[1] in message.content.lower() or badwords[2] in message.content.lower() or badwords[3] in message.content.lower() or badwords[4] in message.content.lower() or badwords[5] in message.content.lower() or badwords[6] in message.content.lower():
+        if message.author.id == 672173306367180806:
+            await message.channel.send(f'Watch your language.')
+        else:
+            await message.channel.send(f'Watch your language, {message.author.mention}!')
+            await message.delete()
+    elif nonowords[0] in message.content.lower() or nonowords[1] in message.content.lower() or nonowords[2] in message.content.lower():
+        await message.channel.send(f'Woah, calm down there, {message.author.mention}!')
         await message.delete()
     elif message.content.startswith('?highfive'):
         gifs = ['https://thumbs.gfycat.com/OldfashionedLawfulKangaroo-size_restricted.gif']
@@ -924,5 +967,11 @@ async def on_message(message):
                 await message.channel.send(gifs[random.randint(0, (len(gifs) - 1))])
         else:
             await message.channel.send(f'{message.author.mention}, you have entered the command incorrectly.\nUsage:```?highfive <entity>```')
-
+    elif '69' in message.content or '420' in message.content:
+        if '69420' in message.content:
+            await message.channel.send("**NICE**")
+        else:
+            await message.channel.send('Nice.')
+    elif message.content.startswith('?github'):
+        await message.channel.send(f'{message.author.mention}, DrSquid™#7711 has a github.\nHere is his github: https://github.com/DrSquidX')
 client.run('token')
